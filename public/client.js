@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     socket.on('receiveAlert', (data) => {
       console.log('Received alert:', data);
+      // console.log(alertData);
       // Handle the received alert data as needed
-      
+    socket.emit('received_message',data)
    
     });
   });
