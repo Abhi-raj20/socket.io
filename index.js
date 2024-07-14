@@ -13,8 +13,8 @@ io.on('connection', (socket) => {
 
   // Handle custom events
   socket.on('alertMessage', (data) => {
-    console.log('Alert message received:', data);
     io.emit('receiveAlert', data); // Emit the alert to all connected clients
+    console.log('Alert message received:', data);
   });
 
   // Handle disconnection

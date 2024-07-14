@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const socket = io();
   
-    document.getElementById('sendAlert').addEventListener('click', () => {
+    document.getElementById('sendAlert').addEventListener('click', async () => {
       const alertData = {
         uniqueKey: 'Nxm4aTJ0-gxhXu0FDTh',
         Date: new Date().toLocaleString(),
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         user_Name: 'M.Hamza',
         user_Phone: '+923164558585'
       };
-  
-      socket.emit('alertMessage', alertData);
+      
+      await socket.emit('alertMessage', alertData);
     });
   
     socket.on('receiveAlert', (data) => {
